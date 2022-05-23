@@ -9,6 +9,7 @@ from sensors.light_intensity import get_light_intensity
 from sensors.temperature_humidity import get_temperature_humidity
 from sensors.lcd_display import show_display
 from post_measurepoint import post_measurepoint
+from post_attributes import update_attribute
 
 def connect(response):
     client = MqttClient(response["murl"],
@@ -19,6 +20,8 @@ def connect(response):
     client.connect()
     print()
     print("Connecting Client")
+    
+    update_attribute(client)
     
     try:
         while True:
