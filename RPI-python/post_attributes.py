@@ -10,6 +10,8 @@ def update_attribute(client):
     client.publish(longitude_attribute)
     latitude_attribute = AttributeUpdateRequest.builder().add_attribute("latitude", 1.290270).build()
     client.publish(latitude_attribute)
+    print("Attributes Uploaded")
+    print()
 
 
 
