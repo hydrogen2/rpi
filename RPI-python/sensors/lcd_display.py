@@ -14,4 +14,7 @@ def show_display(temperature, light_intensity, humidity):
     lcd.setCursor(1, 0)
     lcd.write("Humidity:{}".format(humidity))
 
-    
+def show_msg(msg):
+    lcd.clear()
+    lcd.setCursor(0, 0)
+    lcd.write(msg)
