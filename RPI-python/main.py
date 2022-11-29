@@ -1,4 +1,4 @@
-from rpi_dps2 import register_dps
+from rpi_dps import register_dps
 from rpi_connect import connect
 from sensors.lcd_display import show_msg
 

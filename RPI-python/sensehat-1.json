@@ -1,0 +1,63 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:com:envisioniot:SenseHat;1",
+  "@type": "Interface",
+  "displayName": "Raspberry Pi Sense HAT",
+  "description": "Raspberry Pi Sense HAT",
+  "contents": [
+    {
+      "@type": [
+        "Telemetry",
+        "Temperature"
+      ],
+      "name": "temperature",
+      "displayName": "Temperature",
+      "description": "Temperature in degrees Celsius.",
+      "schema": "double",
+      "unit": "degreeCelsius"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "RelativeHumidity"
+      ],
+      "name": "humidity",
+      "displayName": "Relative Humidity",
+      "description": "Relative Humidity in percentage.",
+      "schema": "int"
+    },
+    {
+      "@type": [
+        "Telemetry",
+        "Illuminance"
+      ],
+      "name": "brightness",
+      "displayName": "Brightness",
+      "description": "Brightness in lux.",
+      "schema": "int",
+      "unit": "lux"
+    },
+    {
+      "@type": "Command",
+      "commandType": "synchronous",
+      "description": {
+        "en": "Display a message on the LED matrix."
+      },
+      "displayName": {
+        "en": "DisplayMessage"
+      },
+      "name": "displayMessage",
+      "request": {
+        "@type": "CommandPayload",
+        "description": {
+          "en": "The message to be displayed."
+        },
+        "displayName": {
+          "en": "Message"
+        },
+        "name": "message",
+        "schema": "string"
+      }
+    }
+  ]
+}
