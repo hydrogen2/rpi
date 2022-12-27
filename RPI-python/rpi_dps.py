@@ -20,7 +20,7 @@ def register_dps(dpsUrl, groupId, groupSecret):
 
     header = {"Content-Type": "application/json"}
 
-    body = {"deviceId": deviceId,
+    body = {"deviceSn": deviceId,
             "groupId": groupId,
             "dpsSignMethod" : "sha256",
             "dpsSignTimestamp": timestamp,
