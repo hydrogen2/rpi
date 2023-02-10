@@ -1,3 +1,5 @@
+import time
+
 from rpi_dps import register_dps
 from rpi_connect import connect
 from sensors.lcd_display import show_msg
@@ -16,14 +18,26 @@ def connected_to_internet(url='http://www.google.com/', timeout=5):
     return False
 
 
+def check_success_register(response):
+    if "ds" in response:
+        return True
+    else:
+        return False
+
+
 if __name__ == "__main__":
 
     try:
-        while connected_to_internet() == False:
+        while not connected_to_internet():
             show_msg("Waiting for WiFi")
 
         show_msg("Registering Device to: " + groupId)
         response = register_dps(dpsUrl, groupId, groupSecret)
+        while not check_success_register(response):
+            show_msg("Fail to get Device")
+            time.sleep(5)
+            response = register_dps(dpsUrl, groupId, groupSecret)
+
         show_msg("Device registered")
 
         connect(response)
