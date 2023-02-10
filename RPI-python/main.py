@@ -5,8 +5,8 @@ from rpi_connect import connect
 from sensors.lcd_display import show_msg
 
 dpsUrl = "https://iot-dps2-ppe1.envisioniot.com/dev/bootstrap"
-groupId = "WBCKBX"
-groupSecret = "Yfc43wGNHn"
+groupId = "D4KJCC"
+groupSecret = "D8QQlxh5zV"
 
 
 def connected_to_internet(url='http://www.google.com/', timeout=5):
